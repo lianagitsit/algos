@@ -3,7 +3,30 @@
 
 
 
-/* WHEREFORE ART THOU?
+/* PIG LATIN
+
+
+function translatePigLatin(str) {
+  
+  var vowels = ['a', 'e', 'i', 'o', 'u'];
+  
+  if (vowels.indexOf(str[0]) !== -1){
+    return str + "way";
+  } else {
+    for (var i = 1; i < str.length; i++){
+      if (vowels.indexOf(str[i]) !== -1){
+        return str.substring(i) + str.substring(0, i) + "ay";
+      }
+    }
+  }
+  
+  return str;
+}
+
+translatePigLatin("consonant");
+
+
+// WHEREFORE ART THOU?
 
 function whatIsInAName(collection, source) {
 	// What's in a name?
