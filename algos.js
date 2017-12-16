@@ -1,7 +1,57 @@
+
+
 // algos.js
 // Free Code Camp Algorithm Challenges - lianagitsit
 
+/* DNA pairing version 2: hash map style
 
+function pairElement(str){
+	var results = [];
+
+	var basepairs = {
+		"G": "C", 
+		"C": "G",
+	  "A": "T",
+		"T": "A"}
+		
+	for (let i = 0; i < str.length; i++){
+		results.push([str[i], basepairs[str[i]]]);
+	}
+
+	return results;
+
+}
+
+// DNA PAIRING
+// a function that is passed a string of unpaired DNA elements
+// take each character, get its pair, and return the results as a second array of arrays
+
+function pairElement(str) {
+
+	var result = [];
+
+	for (var i = 0; i < str.length; i++){
+
+		var subArray = [];
+
+		if (str[i] === "G"){
+			subArray.push("G", "C");
+		} else if (str[i] === "C"){
+			subArray.push("C", "G");
+		} else if (str[i] === "A"){
+			subArray.push("A", "T");
+		} else if (str[i] === "T"){
+			subArray.push("T", "A");
+		}
+
+		result.push(subArray);
+	}
+
+  return result;
+}
+*/
+
+pairElement("GCG");
 
 /* PIG LATIN
 
