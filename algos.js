@@ -3,6 +3,22 @@
 // algos.js
 // Free Code Camp Algorithm Challenges - lianagitsit
 
+/* PERCENT ENCODING takes a string and swaps spaces for %20
+
+function percentEncoder(str){
+	var result = "";
+	var tracker = 0;
+
+	for (var i = 0; i < str.length; i++){
+		if (str[i] === " "){
+			result += str.substring(tracker, i) + "%20";
+			tracker = i + 1;
+		}
+	}
+	result += str.substring(tracker);
+	return result;
+}
+
 /* DNA pairing version 2: hash map style
 
 function pairElement(str){
