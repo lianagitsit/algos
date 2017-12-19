@@ -3,6 +3,27 @@
 // algos.js
 // Free Code Camp Algorithm Challenges - lianagitsit
 
+/* MISSING LETTERS: Find the missing letter in the passed letter range and return it. 
+If all letters are present in the range, return undefined.
+
+
+function fearNotLetter(str) {
+  var alphaStr = "abcdefghijklmnopqrstuvwxyz";
+  var n = 0;
+  
+  for (var i = alphaStr.indexOf(str[0]); i < str.length; i++){
+    if (str[n] !== alphaStr[i]){
+      return alphaStr[i];
+    }
+    n++;
+  }
+  return undefined;
+}
+
+fearNotLetter("defh");
+
+
+
 /* PERCENT ENCODING takes a string and swaps spaces for %20
 
 function percentEncoder(str){
