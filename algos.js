@@ -3,6 +3,31 @@
 // algos.js
 // Free Code Camp Algorithm Challenges - lianagitsit
 
+/* SORTED UNION: a function that takes two or more arrays and 
+returns a new array of unique values in the order of the original 
+provided arrays.
+
+function uniteUnique(arr) {
+  
+  var results = [];
+  
+  for (var i = 0; i < arguments.length; i++){
+    for (var j = 0; j < arguments[i].length; j++){
+      if (results.indexOf(arguments[i][j]) === -1){
+        results.push(arguments[i][j]);
+      }
+    }
+  }
+  
+  return results;
+}
+
+uniteUnique([1, 3, 2], [5, 2, 1, 4], [2, 1]);
+
+
+
+/* BOO WHO? Check if a value is classified as a boolean primitive.
+
 /* MISSING LETTERS: Find the missing letter in the passed letter range and return it. 
 If all letters are present in the range, return undefined.
 
