@@ -3,6 +3,33 @@
 // algos.js
 // Free Code Camp Algorithm Challenges - lianagitsit
 
+
+/* SEARCH AND REPLACE: perform a search on a string (arg[0]) for a given word
+(arg[1]) and replace it with a new word (arg[1]). Preserve the case of the 
+original word in the replacement.
+
+
+function myReplace(str, before, after) {
+  var final, afterCapitalized;
+	var splitStr = [];
+	
+	splitStr = str.split(" ");
+  
+  if (before.charAt(0) === before.charAt(0).toUpperCase()){
+		afterCapitalized = after.charAt(0).toUpperCase() + after.substring(1);
+		splitStr[splitStr.indexOf(before)] = afterCapitalized;
+  } else {
+		splitStr[splitStr.indexOf(before)] = after;
+	}
+  
+  final = splitStr.join(" ");
+  
+  return final;
+}
+
+myReplace("A quick brown fox jumped over the lazy dog", "jumped", "leaped");
+
+
 /* SORTED UNION: a function that takes two or more arrays and 
 returns a new array of unique values in the order of the original 
 provided arrays.
