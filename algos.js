@@ -3,6 +3,23 @@
 // algos.js
 // Free Code Camp Algorithm Challenges - lianagitsit
 
+/* CONVERT HTML ENTITIES: convert characters ", ', &, <, > to their corresponding 
+HTML entities
+
+function convertHTML(str) {
+  var final;
+  
+  final = str.replace(/&/g, "&amp;");
+  final = final.replace(/</g, "&lt;");
+  final = final.replace(/>/g, "&gt;");
+  final = final.replace(/"/g, "&quot;");
+  final = final.replace(/'/g, "&apos;");
+
+  return final;
+}
+
+convertHTML("Hamburgers < Pizza < Tacos");
+
 
 /* SEARCH AND REPLACE: perform a search on a string (arg[0]) for a given word
 (arg[1]) and replace it with a new word (arg[1]). Preserve the case of the 
