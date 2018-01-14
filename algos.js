@@ -3,6 +3,41 @@
 // algos.js
 // Free Code Camp Algorithm Challenges - lianagitsit
 
+
+/* SUM ALL ODD FIBONACCI NUMBERS: Given a positive integer num, return the sum 
+of all odd Fibonacci numbers that are less than or equal to num.
+
+function sumFibs(num) {
+  
+  var arr = [1, 1];
+  var i = 0;
+  var j = 1;
+  var sum = 0;
+  
+  while (sum <= num){
+    sum = arr[i] + arr[j];
+    if (sum <= num){
+      arr.push(sum);
+      i++;
+      j++;
+    }
+  }
+  
+  sum = 0;
+  
+  for (var k = 0; k < arr.length; k++){
+    if (arr[k] % 2 === 1){
+      sum += arr[k];
+    }
+  }
+    
+  return sum;
+}
+
+sumFibs(10);
+
+
+
 /* SPINAL TAP CASE: Convert a string to spinal case
 
 function spinalCase(str) {
