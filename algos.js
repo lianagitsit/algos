@@ -3,6 +3,33 @@
 // algos.js
 // Free Code Camp Algorithm Challenges - lianagitsit
 
+/* SPINAL TAP CASE: Convert a string to spinal case
+
+function spinalCase(str) {
+  
+  function capsNoSpaceReplacer(match, offset, str){
+    return "-" + match.toLowerCase();
+  }
+  
+  function capsReplacer(match, offset, str){
+    return match.toLowerCase();
+  }
+  
+  // Replace spaces and underscores
+  str = str.replace(/\s|_/g, "-");
+  
+  // Replace capital letters where there are no spaces
+  str = str.replace(/\B[A-Z]/g, capsNoSpaceReplacer);
+  
+  // Replaces capital letters where there are spaces
+  str = str.replace(/[A-Z]\B/g, capsReplacer);
+  
+  return str;
+}
+
+spinalCase("This Is Spinal Tap");
+
+
 /* CONVERT HTML ENTITIES: convert characters ", ', &, <, > to their corresponding 
 HTML entities
 
