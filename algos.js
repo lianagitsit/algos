@@ -3,6 +3,45 @@
 // algos.js
 // Free Code Camp Algorithm Challenges - lianagitsit
 
+/* SUM ALL PRIMES: find the sum of all prime numbers preceding a given number
+
+function sumPrimes(num) {
+  // All even numbers > 2 are out because they are 
+  // divisible by 1, themselves, and 2
+  
+  var sum = 2;
+  var possiblePrime;
+  var flooredSquareRoot;
+ 
+  
+  for (possiblePrime = 3; possiblePrime <= num; possiblePrime += 2){
+    // find sqrt of possiblePrime
+    flooredSquareRoot = Math.floor(Math.sqrt(possiblePrime));
+    
+    // test numbers (x) up to sqrt(possiblePrime):
+    for (var testNumber = 1; testNumber <= flooredSquareRoot; testNumber++){
+
+      // if possiblePrime % x === 0, possiblePrime is composite
+      if (possiblePrime % testNumber === 0 && testNumber > 1){
+        
+        // kick out of testing possiblePrime
+        testNumber = flooredSquareRoot + 1;
+      }
+      
+      // if no testNumbers suggest possiblePrime is composite, add it to sum
+      if (testNumber === flooredSquareRoot){
+        sum += possiblePrime;
+      }
+    }
+  }
+  
+  
+  return sum;
+}
+
+sumPrimes(10);
+
+
 
 /* SUM ALL ODD FIBONACCI NUMBERS: Given a positive integer num, return the sum 
 of all odd Fibonacci numbers that are less than or equal to num.
