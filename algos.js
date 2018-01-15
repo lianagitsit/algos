@@ -3,6 +3,49 @@
 // algos.js
 // Free Code Camp Algorithm Challenges - lianagitsit
 
+
+/* SMALLEST COMMON MULTIPLE: find the LCM of two numbers that is also evenly divisible by all 
+numbers between them.
+
+function smallestCommons(arr) {
+  
+  var foundLCM = false;
+  var count = 1;
+  var multiple;
+  
+  // find the larger number
+  var larger = arr[0];
+  var smaller = arr[1];
+  if (smaller > larger){
+    larger = arr[1];
+    smaller = arr[0];
+  }
+    
+  // start finding multiples of the larger number
+  while (!foundLCM){
+    multiple = larger * count;
+    
+    // at each multiple, check if it is divisible by the other number
+    if (multiple % smaller === 0){
+        // if it is, loop through the intermediary numbers and check 
+        // for even divisibility for each
+        for (var i = smaller + 1; i < larger; i++){
+          if (multiple % i > 0){
+            i = larger;
+          } else if (i === larger - 1 && multiple % i === 0){
+            foundLCM = true;
+          }
+        }
+    } 
+    count++;
+  }
+  
+  return multiple;
+}
+
+smallestCommons([23, 18]);
+
+
 /* SUM ALL PRIMES: find the sum of all prime numbers preceding a given number
 
 function sumPrimes(num) {
