@@ -4,6 +4,39 @@
 // Free Code Camp Algorithm Challenges - lianagitsit
 
 
+
+/* DROP IT: Drop the elements from the front of an array until the function in the 
+second argument returns true.
+
+function dropElements(arr, func) {
+  
+  var i = 0;
+  while (!func(arr[i])){
+    arr.shift();
+  }
+
+  return arr;
+}
+
+dropElements([1, 2, 3, 4], function(n) {return n >= 3; });
+
+
+
+/* FINDERS KEEPERS: looks through an array (first argument) and returns the first element 
+in the array that passes a truth test (second argument).
+
+function findElement(arr, func) {
+  var num;
+  
+  num = arr.filter(func)[0];
+  
+  return num;
+}
+
+findElement([1, 2, 3, 4], function(num){ return num % 2 === 0; });
+
+
+
 /* SMALLEST COMMON MULTIPLE: find the LCM of two numbers that is also evenly divisible by all 
 numbers between them.
 
