@@ -4,6 +4,40 @@
 // Free Code Camp Algorithm Challenges - lianagitsit
 
 
+/*STEAMROLLER: Flatten an array of indeterminate levels of nesting
+
+function steamrollArray(arr) {
+  var final = [];
+  
+  function steamrolled(item){
+    var j = 0;
+    
+    if (!Array.isArray(item)){
+      final.push(item);
+      return final;
+    } 
+    
+    while (j < item.length){
+      if (!Array.isArray(item[j])){
+        final.push(item[j]);
+        j++;
+      } else {
+        return steamrolled(item[j]);
+      }
+    }
+    
+  }
+  
+  for (var i = 0; i < arr.length; i++){
+    steamrolled(arr[i]);
+  }
+
+  return final;
+}
+
+
+steamrollArray([1, [2], [3, [[4]]]]);
+
 
 /* DROP IT: Drop the elements from the front of an array until the function in the 
 second argument returns true.
