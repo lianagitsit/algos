@@ -4,6 +4,51 @@
 // Free Code Camp Algorithm Challenges - lianagitsit
 
 
+/* ARGUMENTS OPTIONAL: sum two arguments; if only one is provided, return a function
+that expects one argument and returns the sum
+
+function addTogether(x, y) {
+
+if (arguments.length === 1 && typeof x === "number"){
+      return function(y){
+        if (typeof y !== "number"){
+          return undefined;
+        } else {
+          return x + y;
+        }
+      };
+  
+  } else if (typeof x !== "number" || typeof y !== "number"){
+      return undefined;
+    
+  } else {
+      return x + y;
+  }
+  
+  var sumTwoAnd = addTogether(x);
+  
+}
+
+addTogether(2)(3);
+
+
+
+/* EVERYTHING BE TRUE: check if the second argument is truthy on all elements of a collection
+
+function truthCheck(collection, pre) {
+  
+  for (var i = 0; i < collection.length; i++){
+    if (!collection[i][pre]){
+      return false;
+    }
+  }
+  
+  return true;
+}
+
+truthCheck([{"user": "Tinky-Winky", "sex": "male"}, {"user": "Dipsy", "sex": "male"}, {"user": "Laa-Laa", "sex": "female"}, {"user": "Po", "sex": "female"}], "sex");
+
+
 /* BINARY AGENTS: Return a translated sentence from the passed binary string.
 
 function binaryAgent(str) {
