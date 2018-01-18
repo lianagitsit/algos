@@ -4,6 +4,82 @@
 // Free Code Camp Algorithm Challenges - lianagitsit
 
 
+/* NO REPEATS PLEASE: Return the number of total permutations of the provided string that don't 
+have repeated consecutive letters. Assume that all characters in the provided string are each unique.
+
+// This is an ABSURD solution to this problem - I'm actually surprised it worked, given the space and runtime
+// it would take for, say, a 12-character string. But I wanted to be a cowboy, so here we are.
+
+function permAlone(str) {
+  var indexPermsArr = [];
+  var charPermsArr = [];
+  var count = 0;
+  
+  function factorial(num) {    
+    if (num < 0) {  
+        return -1;  
+    }   
+    else if (num == 0) {  
+        return 1;  
+    }    
+    else {  
+        return (num * factorial(num - 1));  
+    }  
+  } 
+  
+  // generate a single permutation of the provided string
+  function makeAperm(){
+    var characterPerm = "";
+    var indexPerm = "";
+    var usedIndexes = []; 
+    var i;
+    
+    for (var j = 0; j < str.length; j++){
+      // continue generating a random number 
+      do {
+        i = Math.floor(Math.random() * str.length);
+       // until you get one that hasn't been used
+       } while (usedIndexes.indexOf(i) !== -1);
+      
+      usedIndexes.push(i);       // push index to used bin
+      indexPerm += i.toString(); // add index to string
+      characterPerm += str.charAt(i);      // build actual string
+      
+    } // end of perm loop
+   
+    // run this function until it generates a unique perm
+    if (indexPermsArr.indexOf(indexPerm) === -1){
+      indexPermsArr.push(indexPerm);
+      charPermsArr.push(characterPerm);
+      //return charPermsArr;
+    } else {
+      return makeAperm();
+    }
+  }
+  
+  // generate all possible permutations of str
+  for (var k = 0; k < factorial(str.length); k++){
+    makeAperm();
+  }
+  
+  // check perms for consecutive letters
+  for (var m = 0; m < charPermsArr.length; m++){
+    for (var n = 0; n < charPermsArr[m].length; n++){
+      if (n === charPermsArr[m].length - 1){
+        count++;
+      } else if (charPermsArr[m].charAt(n) === charPermsArr[m].charAt(n + 1)) {
+        n = charPermsArr[m].length;
+      }  
+    }
+  }
+  
+  
+  return count;
+}
+
+permAlone('aab');
+
+
 /* ARGUMENTS OPTIONAL: sum two arguments; if only one is provided, return a function
 that expects one argument and returns the sum
 
